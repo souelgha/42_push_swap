@@ -2,24 +2,22 @@
 
 int main(int argc, char **argv)
 {
-    int     i;    
-    char    **tab = NULL;
+	t_stack_node *a;
+	t_stack_node *b;	
     (void)argc;
+
+	a = NULL;
+	b = NULL;
 
     if (argc < 2)
         return(0);
     if ( argc == 1 || (argc == 2 && argv[1][0] =='\0'))
         return (0);
     if (argc == 2)
-        tab = ft_split(argv[1], ' ');
-    i = 0;
-    while ( tab[i][0] != '\0')
-	{
-		printf("tab[%d] =%s\n", i, tab[i]); 
-        free(tab[i]);
-		i++;
-	}
-	free(tab);
+        argv = ft_split(argv[1], ' ');
+	init_stack_a(&a, argv + 1);
+   
+	free(&a);
 	return (0);
 
 
