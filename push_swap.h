@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/08 17:32:47 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/09 13:40:01 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,15 @@ typedef struct s_stack_node
 
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
-int	ft_atoi(const char *str);
+long int		ft_atoi(const char *str);
 
 /**********gestion des errors****/
-int error_syntax(char *str);
 void	ft_lstclear(t_stack_node **lst);
+int		error_syntax(char *str);
+int		ft_strcmp(const char *s1, const char *s2);
+int		error_duplicate(int start, char **argv);
+void	print_error(void);
+void	manage_error(int argc, char **argv);
 
 
 
