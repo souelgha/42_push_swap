@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/09 13:40:01 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:18:11 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 
 typedef struct s_stack_node
 {
-	int		value;
-	int 	index;
+	int						value;
+	int 					index;
 
 	struct	s_stack_node	*target_node;
 	struct 	s_stack_node	*next;

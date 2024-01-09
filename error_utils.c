@@ -81,6 +81,7 @@ void manage_error(int i, char **argv)
         i++;
     }
 }
+/*
 int	main(int argc, char **argv)
 {
 	(void)argc;
@@ -96,4 +97,4 @@ int	main(int argc, char **argv)
 	manage_error(i, argv);
 	return (0);
 
-}
+}*/
