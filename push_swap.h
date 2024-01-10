@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/09 16:18:11 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:38:06 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,17 @@ long int		ft_atoi(const char *str);
 void	ft_lstclear(t_stack_node **lst);
 int		error_syntax(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
-int		error_duplicate(int start, char **argv);
+int		error_duplicate(char **argv);
 void	print_error(void);
-void	manage_error(int argc, char **argv);
+void	manage_error(char **argv);
 
+/*************listes************/
+t_stack_node	*ft_lstnew(int value);
+t_stack_node	*ft_lstlast(t_stack_node *lst);
+void			ft_lstclear(t_stack_node **lst);
 
+/*************free de memoire******/
+void	free_split(char **argv);
 
 
 

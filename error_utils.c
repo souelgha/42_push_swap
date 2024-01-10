@@ -1,100 +1,116 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/10 14:03:10 by sonouelg          #+#    #+#             */
+/*   Updated: 2024/01/10 14:29:01 by sonouelg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+/*************print des erreurs***************/
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+}
 
 /*fonction error de syntax . return 1 si error*/
 int	error_syntax(char *str)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (str[i])
 	{
-		if ((str[i] < '0' || str[i] > '9') && str[i] != '+' && str[i] != '-')			
-			return(1);
+		if ((str[i] < '0' || str[i] > '9') && str[i] != '+' && str[i] != '-')
+		{
+			return (1);
+			break ;
+		}
 		i++;
 	}
 	return (0);
 }
 
 /********gestion des doublons. return 1 si error****/
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-		else
-			i++;
-	}
-	return (0);
-}
-
-int	error_duplicate(int i, char **argv)
+int	error_duplicate(char **argv)
 {
 	int	j;
+	int	i;
 
+	i = 1;
 	while (argv[i])
 	{
 		j = i + 1;
 		while (argv[j])
 		{
-			if ((ft_strcmp(argv[i], argv[j]) != 0))
+			if ((ft_atoi(argv[i]) != ft_atoi(argv[j])))
 				j++;
 			else
 			{
 				return (1);
-				break;
+				break ;
 			}
 		}
 		i++;
 	}
 	return (0);
 }
-/*************print des erreurs***************/
-void	print_error(void)
+
+/*******overflow int *********/
+int	check_int_arg(char **argv)
 {
-	write(2, "Error\n", 6);
-}
-/************* management des erreurs***************/
-void manage_error(int i, char **argv)
-{
+	int			i;
+	int			j;
 	long int	nb;
 
-	nb = 0;
-    if (error_duplicate(i, argv))
-        print_error();   
-    while (argv[i])
-    {
-	    if (error_syntax(argv[i]))
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+			j++;
+		if (j > 11)
 		{
-            print_error();
-			break;
+	//		printf("errorint j\n");
+			return (1);
 		}
 		nb = ft_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
-			print_error();
-			break;
+	//		printf("errorint\n");
+			return (1);
 		}
-        i++;
-    }
-}
-/*
-int	main(int argc, char **argv)
-{
-	(void)argc;
-    int i;
-	if ( argc == 1 || (argc == 2 && argv[1][0] =='\0'))
-        return (0);
-	if (argc == 2) 
-        i = 0;
-    else
-        i = 1;
-    if (argc == 2)
-		argv = ft_split(argv[1], ' ');   
-	manage_error(i, argv);
+		i++;
+	}
 	return (0);
+}
 
-}*/
+/************* management des erreurs***************/
+void	manage_error(char **argv)
+{
+	int	i;
+
+	if (error_duplicate(argv))
+	{
+		print_error();
+	//	printf("errdupli\n");
+	}
+	if (check_int_arg(argv))
+		print_error();
+	i = 1;
+	while (argv[i])
+	{
+		if (error_syntax(argv[i]))
+		{
+			print_error();
+	//		printf("errorsynt\n");
+			break ;
+		}
+		i++;
+	}
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:23:37 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/08 17:26:47 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/10 13:05:15 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,13 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 
 	count = ft_counttab(s, c);
-	tab = (char **)malloc((count + 1) * sizeof(char *));
+	tab = (char **)malloc((count + 2) * sizeof(char *));
 	if (tab == NULL)
 		return (NULL);
 	i = 0;
-	k = 0;
-	while (k < count && s[i] != '\0')
+	k = 1;
+	tab[0] = NULL;
+	while (k <= count && s[i] != '\0')
 	{
 		if (s[i] != c && s[i] != '\0' && i < ft_strlen(s))
 		{
