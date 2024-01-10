@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:03:10 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/10 14:29:01 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:11:15 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,42 +75,39 @@ int	check_int_arg(char **argv)
 		while (argv[i][j])
 			j++;
 		if (j > 11)
-		{
-	//		printf("errorint j\n");
 			return (1);
-		}
 		nb = ft_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-		{
-	//		printf("errorint\n");
 			return (1);
-		}
 		i++;
 	}
 	return (0);
 }
 
 /************* management des erreurs***************/
-void	manage_error(char **argv)
+int	manage_error(char **argv)
 {
 	int	i;
 
 	if (error_duplicate(argv))
 	{
 		print_error();
-	//	printf("errdupli\n");
+		return (1);
 	}
-	if (check_int_arg(argv))
+	else if (check_int_arg(argv))
+	{
 		print_error();
+		return (1);
+	}
 	i = 1;
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
 		{
 			print_error();
-	//		printf("errorsynt\n");
-			break ;
+			return (1);
 		}
 		i++;
 	}
+	return (0);
 }
