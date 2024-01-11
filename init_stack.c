@@ -38,7 +38,7 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node)
 		ptr->next = new_node;
 	}
 }
-
+/*********** initialiser la stack a ******************/
 void	init_stack(t_stack_node **a, char **argv)
 {
 	int i;
@@ -53,17 +53,7 @@ void	init_stack(t_stack_node **a, char **argv)
 	}
 }
 
-void	affiche_list(t_stack_node *lst)
-{
-	t_stack_node	*ptr;
 
-	ptr = lst;
-	while (ptr != NULL)
-	{
-		printf("nb=%d, i=%d\n", ptr->value, ptr->index);
-		ptr = ptr->next;
-	}
-}
 
 
 

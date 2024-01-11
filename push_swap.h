@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/10 16:58:41 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:42:53 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ void			affiche_list(t_stack_node *lst);
 /*************free de memoire******/
 void	free_split(char **argv);
 
-
+/*************commandes sur les piles*****/
+//void	swap_nodes(t_stack_node **stack, t_stack_node **second);
+void swap_a(t_stack_node *stack);
+void swap_b(t_stack_node *stack);
+void swap_ss(t_stack_node *stack_a, t_stack_node *stack_b);
+void	rotate_nodes_a(t_stack_node *stack);
 
 #endif

@@ -19,9 +19,16 @@ int main(int argc, char **argv)
 	{
 		init_stack(&a, argv);
 		affiche_list(a);
+	//	printf("\n");
+	//	swap_a(a);
+	//	affiche_list(a);
+		rotate_nodes_a(a);
+		affiche_list(a);
+		
 	}
 	if (argc == 2)
 		free_split(argv);
+	ft_lstclear(&a);
 	return (0);
 
 }
