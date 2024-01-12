@@ -59,6 +59,25 @@ void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new)
 		*lst = new;
 	}	
 }
+void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
+{
+//	t_stack_node	*ptr;
+
+//	ptr = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new_node;
+		new_node->prev = NULL;
+		new_node->next = NULL;
+	}
+	else
+	{
+		new_node->next = *lst;
+		new_node->prev = NULL;
+		*lst = new_node;
+	}
+}
+
 /*********afficher la liste****************/
 void	affiche_list(t_stack_node *lst)
 {

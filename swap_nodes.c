@@ -34,17 +34,8 @@ void swap_b(t_stack_node *stack)
 
 void swap_ss(t_stack_node *stack_a, t_stack_node *stack_b)
 {
-	int a;
-	int	b;
-
-	a = stack_a->value;
-	b = stack_a->next->value;
-	stack_a->value = b;
-	stack_a->next->value = a;
-	a = stack_b->value;
-	b = stack_b->next->value;
-	stack_b->value = b;
-	stack_b->next->value = a;
+	swap_a(stack_a);
+	swap_b(stack_b);
 	write(1, "ss\n",3);
 
 

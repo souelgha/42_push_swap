@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/11 16:42:53 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/12 16:45:19 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_stack_node	*ft_lstnew_node(char *str, int index);
 void			ft_lstclear(t_stack_node **lst);
 void			ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node);
 void			ft_lstadd_front(t_stack_node **lst, t_stack_node *new_node);
+void			ft_add_front_node(t_stack_node **lst, t_stack_node *new_node);
 void			init_stack(t_stack_node **a, char **argv);
 void			affiche_list(t_stack_node *lst);
 
@@ -58,10 +59,16 @@ void			affiche_list(t_stack_node *lst);
 void	free_split(char **argv);
 
 /*************commandes sur les piles*****/
-//void	swap_nodes(t_stack_node **stack, t_stack_node **second);
-void swap_a(t_stack_node *stack);
-void swap_b(t_stack_node *stack);
-void swap_ss(t_stack_node *stack_a, t_stack_node *stack_b);
-void	rotate_nodes_a(t_stack_node *stack);
+void 	swap_a(t_stack_node *stack);
+void 	swap_b(t_stack_node *stack);
+void 	swap_ss(t_stack_node *stack_a, t_stack_node *stack_b);
+void	rotate_nodes_a(t_stack_node **stack);
+void	rotate_nodes_b(t_stack_node **stack);
+void	rotate_nodes_ab(t_stack_node **stack_a, t_stack_node **stack_b);
+void	reverse_rotate_nodes_a(t_stack_node **stack);
+void	reverse_rotate_nodes_b(t_stack_node **stack);
+void	reverse_rotate_nodes_ab(t_stack_node **stack_a, t_stack_node **stack_b);
+void	push_to_b(t_stack_node **stack_a, t_stack_node **stack_b);
+void	push_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif
