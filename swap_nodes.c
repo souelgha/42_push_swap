@@ -1,6 +1,7 @@
 #include "push_swap.h"
 
 /***************swap des 2  premiers elements de la stack**********/
+/*ajouter le swap des index*****/
 void swap_a(t_stack_node *stack)
 {
 	int a;

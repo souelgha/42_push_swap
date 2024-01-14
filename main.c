@@ -4,12 +4,12 @@
 int main(int argc, char **argv)
 {
 	t_stack_node *a;
-	t_stack_node *b;
+//	t_stack_node *b;
 	
     (void)argc;
 
 	a = NULL;
-	b = NULL;
+//	b = NULL;
 
 	if ( argc == 1 || (argc == 2 && argv[1][0] =='\0'))
         return (0);
@@ -17,45 +17,53 @@ int main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	if(!manage_error(argv))
 	{
-		init_stack(&a, argv);
+		init_stack_a(&a, argv);
+	//	b = init_stack_b(a);
 		affiche_list(a);
 		printf("\n");
-	/*	swap_a(a);
-		affiche_list(a);
+		sort_three_args(a);
+	//	printf("b");
+	//	affiche_list(b);
+	//	swap_a(a);
+	/*	affiche_list(a);
 		printf("\n");
 		rotate_nodes_a(&a);
 		affiche_list(a);
 		printf("\n");
 		reverse_rotate_nodes_a(&a);
-		affiche_list(a);
+		affiche_list(a);*/
 		printf("\n");
-		printf("affiche pbpbpbrrb\n");*/
-		push_to_b(&a, &b);
+	//	printf("affiche pbpbpbrrb\n");
+	/*	push_to_b(&a, &b);
 		push_to_b(&a, &b);
 		push_to_b(&a, &b);
 		push_to_b(&a, &b);
 		affiche_list(b);
-		printf("\n");
-	//	reverse_rotate_nodes_a(&b);
-		affiche_list(a);
-		printf("\n");
+		printf("\n");*/
+	//	swap_ss(a, b);
+	//	reverse_rotate_nodes_b(&b);
+	//	affiche_list(a);
+	//	printf("\n");
+	//	rotate_nodes_ab(&a, &b);
+	/*	rotate_nodes_a(&a);
+		rotate_nodes_b(&b);
 		rotate_nodes_ab(&a, &b);
 		affiche_list(b);
 		printf("\n");
-		affiche_list(a);
-	//	printf("affiche papa\n");
-		/*push_to_a(&a, &b);
-		push_to_a(&a, &b);
-		affiche_list(b);
-		printf("\n");
 		affiche_list(a);*/
-
+	//	printf("affiche papa\n");
+	//push_to_a(&a, &b);
+	//	push_to_a(&a, &b);
+	//	affiche_list(b);
+	//	printf("\n");
+	//	affiche_list(a);
+//
 		
 	}
 	if (argc == 2)
 		free_split(argv);
 	ft_lstclear(&a);
-	//ft_lstclear(&b);
+//	ft_lstclear(&b);
 	return (0);
 
 }

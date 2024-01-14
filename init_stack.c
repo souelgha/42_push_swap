@@ -39,7 +39,7 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node)
 	}
 }
 /*********** initialiser la stack a ******************/
-void	init_stack(t_stack_node **a, char **argv)
+void	init_stack_a(t_stack_node **a, char **argv)
 {
 	int i;
 	t_stack_node *new_node;
@@ -51,6 +51,20 @@ void	init_stack(t_stack_node **a, char **argv)
 		ft_lstadd_back(a, new_node);
 		i++;
 	}
+}
+/*********** attribuer la memoire pour la stack b ******************/
+/************* a ecrire lundi*******************/
+t_stack_node	*init_stack_b(t_stack_node *a)
+{
+	int i;
+	t_stack_node *new_stack;
+
+	i = ft_lstsize(a);
+	printf("i=%d\n", i);
+	new_stack = (t_stack_node*)(sizeof(t_stack_node) * i);
+	if(new_stack == NULL)
+		return(NULL);
+	return(new_stack);	
 }
 
 

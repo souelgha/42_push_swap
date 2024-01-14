@@ -6,7 +6,7 @@
 /*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/12 16:45:19 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/14 21:39:50 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,12 @@ int		manage_error(char **argv);
 t_stack_node	*ft_lstlast(t_stack_node *lst);
 t_stack_node	*ft_lstnew_node(char *str, int index);
 void			ft_lstclear(t_stack_node **lst);
+int				ft_lstsize(t_stack_node *lst);
 void			ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node);
 void			ft_lstadd_front(t_stack_node **lst, t_stack_node *new_node);
 void			ft_add_front_node(t_stack_node **lst, t_stack_node *new_node);
-void			init_stack(t_stack_node **a, char **argv);
+void			init_stack_a(t_stack_node **a, char **argv);
+t_stack_node	*init_stack_b(t_stack_node *a);
 void			affiche_list(t_stack_node *lst);
 
 /*************free de memoire******/
@@ -70,5 +72,9 @@ void	reverse_rotate_nodes_b(t_stack_node **stack);
 void	reverse_rotate_nodes_ab(t_stack_node **stack_a, t_stack_node **stack_b);
 void	push_to_b(t_stack_node **stack_a, t_stack_node **stack_b);
 void	push_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
+
+/*********sort fonctions*******************/
+void sort_three_args(t_stack_node *a);
+int		compnode(t_stack_node *a, t_stack_node *b);
 
 #endif
