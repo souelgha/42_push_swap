@@ -6,12 +6,11 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:23:37 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/10 13:05:15 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:15:10 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 size_t	ft_strlen(const char *str)
 {
@@ -92,5 +91,3 @@ char	**ft_split(char const *s, char c)
 	tab[k] = NULL;
 	return (tab);
 }
-
-

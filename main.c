@@ -24,19 +24,18 @@ int main(int argc, char **argv)
 	//	sort_three_args(a);
 	//	printf("b");
 	//	affiche_list(b);
-	//	swap_a(a);
-	/*	affiche_list(a);
+		printf("Sa(%p)\n", &a);
+		swap_a(a);
+		affiche_list(a);
 		printf("\n");
 		rotate_nodes_a(&a);
+		printf("Sa(%p)\n", &a);
 		affiche_list(a);
 		printf("\n");
 		reverse_rotate_nodes_a(&a);
-		affiche_list(a);*/
-	//	printf("\n");
-	//	printf("affiche pbpbpbrrb\n");
-		// push(&a, &b);
-		// push(&a, &b);
-		// push(&a, &b);
+		printf("Sa(%p)\n", &a);
+		affiche_list(a);
+		printf("\n");
 		push_to_b(&a, &b);
 		push_to_b(&a, &b);
 		push_to_b(&a, &b);
@@ -49,11 +48,6 @@ int main(int argc, char **argv)
 		push_to_a(&a, &b);
 		push_to_a(&a, &b);	
 		push_to_a(&a, &b);
-		// push_to_a(&a, &b);
-		// push_to_a(&a, &b);
-		// push_to_a(&a, &b);
-		// push_to_a(&a, &b);	
-		// push_to_a(&a, &b);	
 		printf("Sa(%p)\n", &a);
 		affiche_list(a);
 		printf("Sb(%p)\n", &b);

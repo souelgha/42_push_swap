@@ -6,16 +6,16 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:03:17 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/10 12:22:46 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:14:26 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 long int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int			i;
+	int			sign;
 	long int	nb;
 
 	i = 0;
@@ -34,7 +34,5 @@ long int	ft_atoi(const char *str)
 		nb = nb * 10 + str[i] - '0';
 		i++;
 	}
-	//printf("i int atoi =%d\n", i);
 	return (nb * sign);
 }
-

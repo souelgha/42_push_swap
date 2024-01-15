@@ -1,21 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 15:10:14 by sonouelg          #+#    #+#             */
+/*   Updated: 2024/01/15 15:12:29 by sonouelg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-/** ******free la list *************/
-void	ft_lstclear(t_stack_node **lst)
-{
-	t_stack_node	*tmp;
-
-	if (!lst)
-		return ;
-	tmp = NULL;
-	while (*lst != NULL)
-	{
-		tmp = (*lst)->next;
-		free(*lst);
-		(*lst) = tmp;
-	}
-	*lst = NULL;
-}
 /***** taille de la liste***********/
 int	ft_lstsize(t_stack_node *lst)
 {
@@ -31,8 +27,8 @@ int	ft_lstsize(t_stack_node *lst)
 	}
 	return (size);
 }
-/************ creer un new node avec la valeur **************/
 
+/************ creer un new node avec la valeur **************/
 /***********trouver le dernier *****/
 t_stack_node	*ft_lstlast(t_stack_node *lst)
 {
@@ -48,22 +44,10 @@ t_stack_node	*ft_lstlast(t_stack_node *lst)
 		return (ptr);
 	}
 }
-/************ajouter un node a la fin******/
 
 /************ajouter un node au debut de la chaine *****/
-void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new)
-{
-	if (lst != NULL && new != NULL)
-	{
-		new->next = *lst;
-		*lst = new;
-	}	
-}
 void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
 {
-//	t_stack_node	*ptr;
-
-//	ptr = *lst;
 	if (*lst == NULL)
 	{
 		*lst = new_node;
@@ -72,7 +56,7 @@ void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
 	}
 	else
 	{
-		new_node->next = *lst;	
+		new_node->next = *lst;
 		new_node->next->prev = new_node;
 		new_node->prev = NULL;
 		*lst = new_node;

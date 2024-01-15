@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 15:08:59 by sonouelg          #+#    #+#             */
+/*   Updated: 2024/01/15 15:09:48 by sonouelg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 /************ creer un new node pour chaque nombre **************/
 t_stack_node	*ft_lstnew_node(char *str, int index)
 {
 	t_stack_node	*new_node;
-	int	value;
+	int				value;
 
 	value = ft_atoi(str);
 	new_node = malloc(sizeof(t_stack_node));
@@ -14,7 +26,6 @@ t_stack_node	*ft_lstnew_node(char *str, int index)
 	new_node->index = index;
 	new_node->next = NULL;
 	new_node->prev = NULL;
-
 	return (new_node);
 }
 
@@ -38,11 +49,12 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node)
 		ptr->next = new_node;
 	}
 }
+
 /*********** initialiser la stack a ******************/
 void	init_stack_a(t_stack_node **a, char **argv)
 {
-	int i;
-	t_stack_node *new_node;
+	int				i;
+	t_stack_node	*new_node;
 
 	i = 1;
 	while (argv[i])
@@ -52,22 +64,3 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		i++;
 	}
 }
-/*********** attribuer la memoire pour la stack b ******************/
-/************* a ecrire lundi*******************/
-t_stack_node	*init_stack_b(t_stack_node *a)
-{
-	int i;
-	t_stack_node *new_stack;
-
-	i = ft_lstsize(a);
-	printf("i=%d\n", i);
-	new_stack = (t_stack_node*)(sizeof(t_stack_node) * i);
-	if(new_stack == NULL)
-		return(NULL);
-	return(new_stack);	
-}
-
-
-
-
-
