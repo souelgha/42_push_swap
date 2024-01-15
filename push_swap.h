@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/15 15:05:32 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:19:56 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void			ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node);
 void			ft_lstadd_front(t_stack_node **lst, t_stack_node *new_node);
 void			ft_add_front_node(t_stack_node **lst, t_stack_node *new_node);
 void			init_stack_a(t_stack_node **a, char **argv);
-t_stack_node	*init_stack_b(t_stack_node *a);
 void			affiche_list(t_stack_node *lst);
 
 /*************free de memoire******/
@@ -77,7 +76,10 @@ void			push_to_b(t_stack_node **stack_a, t_stack_node **stack_b);
 void			push_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
 
 /*********sort fonctions*******************/
-void			sort_three_args(t_stack_node *a);
-int				compnode(t_stack_node *a, t_stack_node *b);
+void			sort_three(t_stack_node *a);
+int				cmpnode(t_stack_node *a, t_stack_node *b);
+void			sort_two(t_stack_node *stack_a);
+int				check_sort(t_stack_node *stack_a);
+void			quick_sort(t_stack_node **stack_a);
 
 #endif

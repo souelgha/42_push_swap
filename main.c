@@ -5,8 +5,6 @@ int main(int argc, char **argv)
 {
 	t_stack_node *a;
 	t_stack_node *b;
-	
-    (void)argc;
 
 	a = NULL;
 	b = NULL;
@@ -21,69 +19,33 @@ int main(int argc, char **argv)
 		printf("Sa(%p)\n", &a);
 		affiche_list(a);
 		printf("\n");
-	//	sort_three_args(a);
-	//	printf("b");
+		if (!check_sort(a))
+		{
+			if(ft_lstsize(a) == 2)
+				sort_two(a);
+			else if (ft_lstsize(a) == 3)
+				sort_three(a);
+		//	else
+		//		quick_sort(&a);
+		}
+		printf("Sa(%p)\n", &a);
+		affiche_list(a);
+		printf("\n");
 	//	affiche_list(b);
-		printf("Sa(%p)\n", &a);
-		swap_a(a);
-		affiche_list(a);
-		printf("\n");
-		rotate_nodes_a(&a);
-		printf("Sa(%p)\n", &a);
-		affiche_list(a);
-		printf("\n");
-		reverse_rotate_nodes_a(&a);
-		printf("Sa(%p)\n", &a);
-		affiche_list(a);
-		printf("\n");
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_b(&a, &b);
-		push_to_a(&a, &b);
-		push_to_a(&a, &b);
-		push_to_a(&a, &b);	
-		push_to_a(&a, &b);
-		printf("Sa(%p)\n", &a);
-		affiche_list(a);
-		printf("Sb(%p)\n", &b);
-		affiche_list(b);
-		printf("\n");
-		swap_ss(a, b);
-		printf("Sa : \n");
-		affiche_list(a);
-		printf("Sb : \n");
-		affiche_list(b);		
-		printf("\n");
-		rotate_nodes_ab(&a, &b);
-		printf("Sa : \n");
-		affiche_list(a);
-		printf("Sb : \n");
-		affiche_list(b);		
-		printf("\n");
-		reverse_rotate_nodes_ab(&a, &b);
-		printf("Sa : \n");
-		affiche_list(a);
-		printf("Sb : \n");
-		affiche_list(b);		
-		printf("\n");
-	//	printf("affiche papa\n");
-	//push_to_a(&a, &b);
-	//	push_to_a(&a, &b);
-	//	affiche_list(b);
-	//	printf("\n");
-	//	affiche_list(a);
-//
+	//	printf("Sa(%p)\n", a);
+		// swap_a(a);
+		// affiche_list(a);
+		// printf("\n");
+		// sort_two(a);
+		// printf("sort two Sa(%p)\n", &a);
+		// affiche_list(a);
+		// printf("\n");
 		
 	}
 	if (argc == 2)
 		free_split(argv);
 	ft_lstclear(&a);
-	ft_lstclear(&b);
+//	ft_lstclear(&b);
 	return (0);
 
 }
