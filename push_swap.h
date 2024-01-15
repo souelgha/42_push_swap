@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/14 21:39:50 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/15 11:14:42 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	reverse_rotate_nodes_b(t_stack_node **stack);
 void	reverse_rotate_nodes_ab(t_stack_node **stack_a, t_stack_node **stack_b);
 void	push_to_b(t_stack_node **stack_a, t_stack_node **stack_b);
 void	push_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
+//void	push(t_stack_node **stack_a, t_stack_node **stack_b);
 
 /*********sort fonctions*******************/
 void sort_three_args(t_stack_node *a);

@@ -72,7 +72,8 @@ void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
 	}
 	else
 	{
-		new_node->next = *lst;
+		new_node->next = *lst;	
+		new_node->next->prev = new_node;
 		new_node->prev = NULL;
 		*lst = new_node;
 	}
@@ -84,9 +85,11 @@ void	affiche_list(t_stack_node *lst)
 	t_stack_node	*ptr;
 
 	ptr = lst;
+	printf("lst_Add=(%p)\n", ptr);
 	while (ptr != NULL)
 	{
-		printf("nb=%d, i=%d\n", ptr->value, ptr->index);
+		printf("nb=%d, i=%d, Add=(%p),", ptr->value, ptr->index, ptr);
+		printf("next=(%p), prev=(%p)\n", ptr->next, ptr->prev);
 		ptr = ptr->next;
 	}
 }
