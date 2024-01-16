@@ -15,16 +15,79 @@ int	check_sort(t_stack_node *stack_a)
 	}
 	return (1);
 }
+/**** size = taille de la liste avec lstsize*/
 
-void	sort_two(t_stack_node *stack_a)
+int	*sortab_final(char **argv, int size)
 {
-	int	a;
-	int	b;
+	int	i;
+	int j;
+	int	*tab;
+	int	min;
 
-	a = stack_a->value;
-	b = stack_a->next->value;
-	stack_a->value = b;
-	stack_a->next->value = a;
-	
+	tab = malloc(sizeof(int) * size);
+	if (!tab)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		tab[i] = ft_atoi(argv[i + 1]);
+		i++;
+	}
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		printf("i=%d, j=%d\n", i, j);
+		while (j < size)
+		{
+			if (tab[j] < tab[i])
+			{
+				min = tab[j];
+				tab[j] = tab[i];
+				tab[i] = min;
+			}
+			j++;
+		}
+		i++;
+	}
+	i = 0;
+	while (i < size)
+	{
+		printf("tab[%d]=%d \t", i, tab[i]);
+		i++;
+	}
+	return (tab);
 }
 
+void	indice_final_node(t_stack_node **a, int *tab, int size)
+{
+	t_stack_node *ptr;
+	int	i;
+
+	ptr = *a;
+	while (ptr->index < size)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (ptr->value == tab[i])
+			{
+				ptr->index_final = i;
+				break;
+			}
+			i++;
+		}
+		ptr = ptr->next;		
+	}
+	ptr=ft_lstlast(*a);
+	while(i < size)
+	{
+		if(ptr->value == tab[i])
+			ptr->index_final = i;
+		i++;
+	}
+
+
+	
+
+}

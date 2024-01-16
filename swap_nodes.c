@@ -6,38 +6,38 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:24:52 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/15 14:28:33 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/16 09:30:02 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack_node *stack)
+void	swap(t_stack_node **stack)
 {
 	int	a;
 	int	b;
 
-	if (!(stack) || !(stack->next))
+	if (!(*stack) || !((*stack)->next))
 		return ;
-	a = stack->value;
-	b = stack->next->value;
-	stack->value = b;
-	stack->next->value = a;
+	a = (*stack)->value;
+	b = (*stack)->next->value;
+	(*stack)->value = b;
+	(*stack)->next->value = a;
 }
 
-void	swap_a(t_stack_node *stack)
+void	swap_a(t_stack_node **stack)
 {
 	swap(stack);
 	write(1, "sa\n", 3);
 }
 
-void	swap_b(t_stack_node *stack)
+void	swap_b(t_stack_node **stack)
 {
 	swap(stack);
 	write(1, "sb\n", 3);
 }
 
-void	swap_ss(t_stack_node *stack_a, t_stack_node *stack_b)
+void	swap_ss(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);

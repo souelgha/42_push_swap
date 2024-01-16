@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/15 17:19:56 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:53:20 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack_node
 {
 	int						value;
 	int						index;
-
+	int						index_final;
 	struct s_stack_node		*target_node;
 	struct s_stack_node		*next;
 	struct s_stack_node		*prev;
@@ -60,10 +60,10 @@ void			affiche_list(t_stack_node *lst);
 void			free_split(char **argv);
 
 /*************commandes sur les piles*****/
-void			swap(t_stack_node *stack);
-void			swap_a(t_stack_node *stack);
-void			swap_b(t_stack_node *stack);
-void			swap_ss(t_stack_node *stack_a, t_stack_node *stack_b);
+void			swap(t_stack_node **stack);
+void			swap_a(t_stack_node **stack);
+void			swap_b(t_stack_node **stack);
+void			swap_ss(t_stack_node **stack_a, t_stack_node **stack_b);
 void			rotate_nodes(t_stack_node **stack);
 void			rotate_nodes_a(t_stack_node **stack);
 void			rotate_nodes_b(t_stack_node **stack);
@@ -76,10 +76,12 @@ void			push_to_b(t_stack_node **stack_a, t_stack_node **stack_b);
 void			push_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
 
 /*********sort fonctions*******************/
-void			sort_three(t_stack_node *a);
-int				cmpnode(t_stack_node *a, t_stack_node *b);
-void			sort_two(t_stack_node *stack_a);
+void			sort_three(t_stack_node **a);
+int				cmpn(t_stack_node *a, t_stack_node *b);
 int				check_sort(t_stack_node *stack_a);
 void			quick_sort(t_stack_node **stack_a);
+int				*sortab_final(char **argv, int size);
+void			indice_final_node(t_stack_node **a, int *tab, int size);
+//void 			affiche_tab_int(int *tab, int size);
 
 #endif
