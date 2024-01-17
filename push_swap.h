@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/16 17:53:20 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:44:41 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void			ft_lstadd_front(t_stack_node **lst, t_stack_node *new_node);
 void			ft_add_front_node(t_stack_node **lst, t_stack_node *new_node);
 void			init_stack_a(t_stack_node **a, char **argv);
 void			affiche_list(t_stack_node *lst);
+void			affiche_status(t_stack_node **lst);
 
 /*************free de memoire******/
 void			free_split(char **argv);
@@ -81,7 +82,10 @@ int				cmpn(t_stack_node *a, t_stack_node *b);
 int				check_sort(t_stack_node *stack_a);
 void			quick_sort(t_stack_node **stack_a);
 int				*sortab_final(char **argv, int size);
+int				*create_tab(char **argv, int size);
 void			indice_final_node(t_stack_node **a, int *tab, int size);
-//void 			affiche_tab_int(int *tab, int size);
+void			ft_swap(int *a, int *b);
+void			sort_five(t_stack_node **a, t_stack_node **b, int size);
+int				abs(int n);
 
 #endif

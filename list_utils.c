@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:10:14 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/16 17:37:28 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:49:02 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,40 @@ void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
 void	affiche_list(t_stack_node *lst)
 {
 	t_stack_node	*ptr;
-
+	if (!lst)
+		return ;
 	ptr = lst;
 	printf("lst_Add=(%p)\n", ptr);
 	while (ptr != NULL)
 	{
-		printf("nb=%d, index=%d, index_final=%d, ,", ptr->value, ptr->index, ptr->index_final);
-		printf("Add=(%p), next=(%p), prev=(%p)\n", ptr, ptr->next, ptr->prev);
+		printf("nb=%d\tindex=%d\tindex_final=%d\t", ptr->value, ptr->index, ptr->index_final);
+		printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
 		ptr = ptr->next;
 	}
+}
+/******affichage de debug */
+void	affiche_status(t_stack_node **lst)
+{
+	t_stack_node	*ptr;
+
+	if (!lst)
+		return;
+	ptr = *lst;
+	printf("lst_Add=(%p)\n", ptr);
+	while (ptr->next != NULL)
+	{
+		printf("value_node=%d\tindex=%d\tindex_final=%d\t", ptr->value, ptr->index, ptr->index_final);
+		if(ptr->prev != NULL)
+			printf("prev_value=%d\t", ptr->prev->value);
+		else
+			printf("prev_value=NULL\t");
+		printf("next_value=%d\t\n", ptr->next->value);	
+		ptr = ptr->next;
+	}
+	if (ptr == ft_lstlast(*lst))
+	{
+		printf("value_node=%d\tindex=%d\tindex_final=%d\t", ptr->value, ptr->index, ptr->index_final);
+		printf("prev_value=%d\tnext_value=NULL\t", ptr->prev->value);
+	}
+
 }
