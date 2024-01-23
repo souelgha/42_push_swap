@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:10:14 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/17 13:49:02 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:51:20 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	affiche_list(t_stack_node *lst)
 	printf("lst_Add=(%p)\n", ptr);
 	while (ptr != NULL)
 	{
-		printf("nb=%d\tindex=%d\tindex_final=%d\t", ptr->value, ptr->index, ptr->index_final);
-		printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
+		printf("nb=%d\tindex=%d\t\n", ptr->value, ptr->index);
+	//	printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
 		ptr = ptr->next;
 	}
 }

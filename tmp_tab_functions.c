@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tmp_tab_functions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 09:58:03 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/17 10:43:48 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:56:56 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	*sortab_final(char **argv, int size)
 }
 
 /****ajout de l indice final dans le node pour utiliser pour le tri****/
-void	indice_final_node(t_stack_node **a, int *tab, int size)
+/*void	indice_final_node(t_stack_node **a, int *tab, int size)
 {
 	t_stack_node	*ptr;
 	int				i;
@@ -95,6 +95,31 @@ void	indice_final_node(t_stack_node **a, int *tab, int size)
 			if (ptr->value == tab[i])
 			{
 				ptr->index_final = i;
+				break ;
+			}
+			i++;
+		}
+		if (ptr == ft_lstlast(*a))
+			break ;
+		ptr = ptr->next;
+	}
+	free(tab);
+}*/
+/****modif des valeurs du tableau dans le node pour utiliser pour le tri****/
+void	valeur_final_node(t_stack_node **a, int *tab, int size)
+{
+	t_stack_node	*ptr;
+	int				i;
+
+	ptr = *a;
+	while (ptr->index <= size)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (ptr->value == tab[i])
+			{
+				ptr->value = i;
 				break ;
 			}
 			i++;

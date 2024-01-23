@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/17 16:44:41 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:56:56 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,9 @@ void			quick_sort(t_stack_node **stack_a);
 int				*sortab_final(char **argv, int size);
 int				*create_tab(char **argv, int size);
 void			indice_final_node(t_stack_node **a, int *tab, int size);
+void			valeur_final_node(t_stack_node **a, int *tab, int size);
 void			ft_swap(int *a, int *b);
-void			sort_five(t_stack_node **a, t_stack_node **b, int size);
+void			sort_uptofive(t_stack_node **a, t_stack_node **b);
 int				abs(int n);
 
 #endif

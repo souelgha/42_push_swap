@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		affiche_list(a);
 		printf("\n");
 		tab = sortab_final(argv, ft_lstsize(a));
-		indice_final_node(&a, tab, ft_lstsize(a));
+		valeur_final_node(&a, tab, ft_lstsize(a));
 		printf("size=%d\n", ft_lstsize(a));
 		if (!check_sort(a))
 		{
@@ -31,14 +31,13 @@ int main(int argc, char **argv)
 				swap_a(&a);
 			else if (ft_lstsize(a) == 3)
 				sort_three(&a);
-			else if (ft_lstsize(a) == 5)
-				sort_five(&a, &b, ft_lstsize(a));
+			else if (ft_lstsize(a) == 4 || ft_lstsize(a) == 5)
+				sort_uptofive(&a, &b);
 		}
-		printf("size=%d\n", ft_lstsize(a));
 		printf("Sa(%p)\n", &a);
 		affiche_list(a);
 	//	affiche_status(&a);
-		printf("\n");
+	//	printf("\n");
 		printf("Sb(%p)\n", &b);
 		affiche_list(b);
 	//	affiche_status(&b);

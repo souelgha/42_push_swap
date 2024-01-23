@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort__three_five_arg.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:28:05 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/17 17:31:52 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/23 09:49:28 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,96 +57,58 @@ void	sort_three(t_stack_node **a)
 		reverse_rotate_nodes_a(a);
 }
 
-void	sort_five(t_stack_node **a, t_stack_node **b, int size)
+void	sort_uptofive(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*last_b;
-	t_stack_node	*last_a;
-	int n;
-
-	last_b = ft_lstlast(*b);
-	last_a = ft_lstlast(*a);
+	t_stack_node	*ptr;
+	t_stack_node	*tmp;
 	
-	push_to_b(a, b);
-	push_to_b(a, b);
+	while(ft_lstsize(*a) > 3)
+		push_to_b(a, b);
 	sort_three(a);
-	last_a = ft_lstlast(*a);
-	printf("lasta=%d\t *b=%d\n", last_a->value, (*b)->value);
-	n = (*b)->index_final - (*a)->index_final;
-	printf("n=%d, abs(n)=%d\n", n, abs(n));
- 	/****conditon 1*****/
-	if (abs(n) < size/2)
+	printf("Sa(%p)\n", &a);
+	affiche_list(*a);
+	printf("Sb(%p)\n", &b);
+	affiche_list(*b);
+	ptr = *b;
+	while (ptr != NULL)
 	{
-		if (n > 0)
+		tmp = ptr->next;
+		if (cmpn(ptr,*a) && (ptr->value - (*a)->value) > ft_lstsize(*a)/2)
 		{
-			rotate_nodes_a(a);
+			while(ptr->value < (ft_lstlast(*a))->value)
+				reverse_rotate_nodes_a(a);
 			push_to_a(a, b);
-			reverse_rotate_nodes_a(a);
 		}
-		/****conditon 2*****/
-		else if (n < 0)
-			push_to_a(a, b);
-		if ((*b)->index_final == 4)
+		else if (cmpn(ptr,*a) && (ptr->value - (*a)->value) <= ft_lstsize(*a)/2)
 		{
+			while(ptr->value > (*a)->value)
+				rotate_nodes_a(a);
 			push_to_a(a, b);
-			rotate_nodes_a(a);
+			while(ft_lstlast(*a)->value < (*a)->value)
+				reverse_rotate_nodes_a(a);
 		}
-		else if ((*b)->index_final == 0)
+		else if (cmpn(*a,ptr) && ((*a)->value - ptr->value) < ft_lstsize(*a)/2)
+		{
+			while(ptr->value > (*a)->value)
+				rotate_nodes_a(a);
 			push_to_a(a, b);
+		}
+		else if (cmpn(*a,ptr)  && ((*a)->value - ptr->value) >= ft_lstsize(*a)/2)
+		{
+			while(cmpn(*a,ptr) && ((*a)->value - ptr->value) != 1)
+					rotate_nodes_a(a);
+			if (cmpn(ptr,*a))
+			{
+				while(ptr->value > (*a)->value)
+					rotate_nodes_a(a);
+			}
+			push_to_a(a, b);
+		}
+		ptr = tmp;
 	}
-
-}
-	
-	
-	
-	
-	
-	
-	/***comdition a index 0 au top de b****/
-	
-	// if (((*a)->index_final - (*b)->index_final) == 1 && (*b)->index_final == 0)
-	//  	push_to_a(a, b);
-	
-
-
-
-
-	/**remettre le topnode de b au bon endroit***/
-	// if (last_a->index_final > (*b)->index_final) 
-	// {
-	// 	if ((last_a->index_final - (*b)->index_final) >= (size)/2)
-	// 	{
-	// 		rotate_nodes_a(a);
-	// 		push_to_a(a, b);
-	// 		push_to_a(a, b);
-	// 		reverse_rotate_nodes_a(a);
-	// 	}
-	// 	else if ((last_a->index_final - (*b)->index_final) < (size)/2)
-	// 	{
-	// 		reverse_rotate_nodes_a(a);
-	// 		push_to_a(a, b);
-	// 		reverse_rotate_nodes_a(a);
-	// 		reverse_rotate_nodes_a(a);
-	// 	}
-	// }
-	// /***condition 2 ***/
-	// if ((last_a->value < (*b)->value))
-	// {
-	// 	if ((last_a->index_final - (*b)->index_final) < (size)/2)
-	// 	{
-	// 		push_to_a(a, b);
-	// 		reverse_rotate_nodes_a(a);		
-	// 		push_to_a(a, b);
-	// 		rotate_nodes_a(a);
-	// 		rotate_nodes_a(a);
-	// 		rotate_nodes_a(a);
-	// 	}
-	// }
-		
-	/*if ((last_a->value > (*b)->value) && (last_a->index_final - (*b)->index_final) >= (size)/2)
+	while ((*a)->value != 0)
 	{
 		rotate_nodes_a(a);
-		push_to_a(a, b);
-		push_to_a(a, b);
-		reverse_rotate_nodes_a(a);
-	}*/
+	}
+}
 
