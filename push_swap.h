@@ -6,7 +6,7 @@
 /*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/22 11:56:56 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/23 15:32:33 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,13 @@ void			indice_final_node(t_stack_node **a, int *tab, int size);
 void			valeur_final_node(t_stack_node **a, int *tab, int size);
 void			ft_swap(int *a, int *b);
 void			sort_uptofive(t_stack_node **a, t_stack_node **b);
-int				abs(int n);
+int				maxi(t_stack_node *a);
+int				mini(t_stack_node *a);
+
+/*********utils sort fonctions*******************/
+void			case_rotate_a(t_stack_node **a, t_stack_node **b);
+void			case_rev_rotate_a(t_stack_node **a);
+void			case_inrev_rotate_a(t_stack_node **a, t_stack_node **b);
+void			sizeuptothree(t_stack_node **a, t_stack_node **b);
 
 #endif

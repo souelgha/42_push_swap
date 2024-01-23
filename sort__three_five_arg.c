@@ -6,7 +6,7 @@
 /*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:28:05 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/23 09:49:28 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/23 16:44:40 by sonia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,6 @@ int	cmpn(t_stack_node *a, t_stack_node *b)
 		return (1);
 	else
 		return (0);
-}
-
-int	abs(int n)
-{
-	int a;
-	
-	a = n;
-	if (n < 0)
-		a = -n;
-	return(a);
 }
 
 void	sort_three(t_stack_node **a)
@@ -57,58 +47,73 @@ void	sort_three(t_stack_node **a)
 		reverse_rotate_nodes_a(a);
 }
 
+void	sizeuptothree(t_stack_node **a, t_stack_node **b)
+{
+	while(ft_lstsize(*a) > 3)
+		push_to_b(a, b);
+}
+
 void	sort_uptofive(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*ptr;
 	t_stack_node	*tmp;
 	
-	while(ft_lstsize(*a) > 3)
-		push_to_b(a, b);
+	sizeuptothree(a, b);
 	sort_three(a);
-	printf("Sa(%p)\n", &a);
-	affiche_list(*a);
+	/*printf("Sa(%p)\n", &a);
+	affiche_list(*a);	
 	printf("Sb(%p)\n", &b);
-	affiche_list(*b);
+	affiche_list(*b);;
+	printf("\n");*/
 	ptr = *b;
 	while (ptr != NULL)
 	{
 		tmp = ptr->next;
-		if (cmpn(ptr,*a) && (ptr->value - (*a)->value) > ft_lstsize(*a)/2)
+		if (cmpn(ptr, *a) && (ptr->value - (*a)->value) > ft_lstsize(*a)/2)
 		{
-			while(ptr->value < (ft_lstlast(*a))->value)
-				reverse_rotate_nodes_a(a);
+			case_inrev_rotate_a(a, b);
 			push_to_a(a, b);
 		}
-		else if (cmpn(ptr,*a) && (ptr->value - (*a)->value) <= ft_lstsize(*a)/2)
+		else if (cmpn(ptr, *a) && (ptr->value - (*a)->value) <= ft_lstsize(*a)/2)
 		{
-			while(ptr->value > (*a)->value)
+			case_rotate_a(a, b);
+			push_to_a(a, b);
+			case_rev_rotate_a(a);
+		}
+		else if (cmpn(*a, ptr) && ((*a)->value - ptr->value) < ft_lstsize(*a)/2)
+		{
+			case_rotate_a(a, b);
+			push_to_a(a, b);
+		}
+		else if (cmpn(*a, ptr) && cmpn(*a, ft_lstlast(*a)) && ((*a)->value - ptr->value) >= ft_lstsize(*a)/2)
+		{
+			case_inrev_rotate_a(a, b);
+			push_to_a(a, b);
+		}
+		else if (cmpn(*a, ptr)  && !cmpn(*a, ft_lstlast(*a)) && ((*a)->value - ptr->value) >= ft_lstsize(*a)/2)
+		{
+			while (cmpn(*a, ptr) && ((*a)->value - ptr->value) != 1)
 				rotate_nodes_a(a);
-			push_to_a(a, b);
-			while(ft_lstlast(*a)->value < (*a)->value)
-				reverse_rotate_nodes_a(a);
-		}
-		else if (cmpn(*a,ptr) && ((*a)->value - ptr->value) < ft_lstsize(*a)/2)
-		{
-			while(ptr->value > (*a)->value)
-				rotate_nodes_a(a);
-			push_to_a(a, b);
-		}
-		else if (cmpn(*a,ptr)  && ((*a)->value - ptr->value) >= ft_lstsize(*a)/2)
-		{
-			while(cmpn(*a,ptr) && ((*a)->value - ptr->value) != 1)
-					rotate_nodes_a(a);
 			if (cmpn(ptr,*a))
-			{
-				while(ptr->value > (*a)->value)
-					rotate_nodes_a(a);
-			}
+				case_rotate_a(a, b);
 			push_to_a(a, b);
 		}
+	//	printf("max=%d\n", maxi(*a));
+	//	printf("min=%d\n", mini(*a));
 		ptr = tmp;
+	/*	printf("Sa(%p)\n", &a);
+		affiche_list(*a);	
+		printf("Sb(%p)\n", &b);
+		affiche_list(*b);;
+		printf("\n");*/
 	}
 	while ((*a)->value != 0)
-	{
 		rotate_nodes_a(a);
-	}
+
+	/*printf("Sa(%p)\n", &a);
+	affiche_list(*a);	
+	printf("Sb(%p)\n", &b);
+	affiche_list(*b);;
+	printf("\n");*/
 }
 

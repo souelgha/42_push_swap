@@ -19,12 +19,12 @@ int main(int argc, char **argv)
 	if(!manage_error(argv))
 	{
 		init_stack_a(&a, argv);
-		printf("Sa(%p)\n", &a);
-		affiche_list(a);
-		printf("\n");
+	//	printf("Sa(%p)\n", &a);
+	//	affiche_list(a);
+	//	printf("\n");
 		tab = sortab_final(argv, ft_lstsize(a));
 		valeur_final_node(&a, tab, ft_lstsize(a));
-		printf("size=%d\n", ft_lstsize(a));
+	//	printf("size=%d\n", ft_lstsize(a));
 		if (!check_sort(a))
 		{
 			if(ft_lstsize(a) == 2)
@@ -34,14 +34,11 @@ int main(int argc, char **argv)
 			else if (ft_lstsize(a) == 4 || ft_lstsize(a) == 5)
 				sort_uptofive(&a, &b);
 		}
-		printf("Sa(%p)\n", &a);
-		affiche_list(a);
-	//	affiche_status(&a);
-	//	printf("\n");
+	/*	printf("Sa(%p)\n", &a);
+		affiche_list(a);	
 		printf("Sb(%p)\n", &b);
-		affiche_list(b);
-	//	affiche_status(&b);
-		printf("\n");
+		affiche_list(b);;
+		printf("\n");*/
 	//	affiche_list(b);
 		// swap_a(&a);
 		// printf("Sa(%p)\n", a);
