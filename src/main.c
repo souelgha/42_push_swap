@@ -7,11 +7,8 @@ int main(int argc, char **argv)
 	t_stack_node *b;
 	int 	*tab;
 	
-
 	a = NULL;
 	b = NULL;
-
-
 	if ( argc == 1 || (argc == 2 && argv[1][0] =='\0'))
         return (0);
 	if (argc == 2)
@@ -38,26 +35,11 @@ int main(int argc, char **argv)
 		affiche_list(a);	
 		printf("Sb(%p)\n", &b);
 		affiche_list(b);;
-		printf("\n");*/
-	//	affiche_list(b);
-		// swap_a(&a);
-		// printf("Sa(%p)\n", a);
-		// affiche_list(a);
-		// printf("\n");
-		// reverse_rotate_nodes_a(&a);
-		// printf("Sa(%p)\n", a);
-		// affiche_list(a);
-		// printf("\n");
-		// sort_two(a);
-		// printf("sort two Sa(%p)\n", &a);
-		// affiche_list(a);
-		// printf("\n");
-		
+		printf("\n");*/		
 	}
 	if (argc == 2)
 		free_split(argv);
 	ft_lstclear(&a);
-//	ft_lstclear(&b);
 	return (0);
 
 }

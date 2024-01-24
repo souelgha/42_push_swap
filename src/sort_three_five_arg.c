@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort__three_five_arg.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:28:05 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/23 16:44:40 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/24 10:30:44 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	sort_three(t_stack_node **a)
 
 void	sizeuptothree(t_stack_node **a, t_stack_node **b)
 {
-	while(ft_lstsize(*a) > 3)
+	while (ft_lstsize(*a) > 3)
 		push_to_b(a, b);
 }
 
@@ -57,63 +57,36 @@ void	sort_uptofive(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*ptr;
 	t_stack_node	*tmp;
-	
+	int				diff;
+
 	sizeuptothree(a, b);
 	sort_three(a);
-	/*printf("Sa(%p)\n", &a);
-	affiche_list(*a);	
-	printf("Sb(%p)\n", &b);
-	affiche_list(*b);;
-	printf("\n");*/
 	ptr = *b;
 	while (ptr != NULL)
 	{
+		diff = ((*a)->value - ptr->value);
 		tmp = ptr->next;
-		if (cmpn(ptr, *a) && (ptr->value - (*a)->value) > ft_lstsize(*a)/2)
-		{
-			case_inrev_rotate_a(a, b);
-			push_to_a(a, b);
-		}
-		else if (cmpn(ptr, *a) && (ptr->value - (*a)->value) <= ft_lstsize(*a)/2)
-		{
-			case_rotate_a(a, b);
-			push_to_a(a, b);
-			case_rev_rotate_a(a);
-		}
-		else if (cmpn(*a, ptr) && ((*a)->value - ptr->value) < ft_lstsize(*a)/2)
-		{
-			case_rotate_a(a, b);
-			push_to_a(a, b);
-		}
-		else if (cmpn(*a, ptr) && cmpn(*a, ft_lstlast(*a)) && ((*a)->value - ptr->value) >= ft_lstsize(*a)/2)
-		{
-			case_inrev_rotate_a(a, b);
-			push_to_a(a, b);
-		}
-		else if (cmpn(*a, ptr)  && !cmpn(*a, ft_lstlast(*a)) && ((*a)->value - ptr->value) >= ft_lstsize(*a)/2)
-		{
-			while (cmpn(*a, ptr) && ((*a)->value - ptr->value) != 1)
-				rotate_nodes_a(a);
-			if (cmpn(ptr,*a))
-				case_rotate_a(a, b);
-			push_to_a(a, b);
-		}
-	//	printf("max=%d\n", maxi(*a));
-	//	printf("min=%d\n", mini(*a));
+		slt(a, b, diff, ptr);
 		ptr = tmp;
-	/*	printf("Sa(%p)\n", &a);
-		affiche_list(*a);	
-		printf("Sb(%p)\n", &b);
-		affiche_list(*b);;
-		printf("\n");*/
 	}
-	while ((*a)->value != 0)
-		rotate_nodes_a(a);
-
-	/*printf("Sa(%p)\n", &a);
-	affiche_list(*a);	
-	printf("Sb(%p)\n", &b);
-	affiche_list(*b);;
-	printf("\n");*/
+	sortend(a);
 }
 
+void	slt(t_stack_node **a, t_stack_node **b, int diff, t_stack_node *ptr)
+{
+	t_stack_node	*last;	
+	int				middle;
+
+	middle = ft_lstsize(*a) / 2;
+	last = ft_lstlast(*a);
+	if (cmpn(ptr, *a) && (-diff > middle))
+		firstcase(a, b);
+	else if (cmpn(ptr, *a) && (-diff <= middle))
+		secondcase(a, b);
+	else if (cmpn(*a, ptr) && diff < middle)
+		thirdcase(a, b);
+	else if (cmpn(*a, ptr) && cmpn(*a, last) && diff >= middle)
+		firstcase(a, b);
+	else if (cmpn(*a, ptr) && !cmpn(*a, last) && diff >= middle)
+		forthcase(a, b);
+}

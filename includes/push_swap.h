@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonia <sonia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/23 15:32:33 by sonia            ###   ########.fr       */
+/*   Updated: 2024/01/24 12:04:42 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,11 @@ void			case_rotate_a(t_stack_node **a, t_stack_node **b);
 void			case_rev_rotate_a(t_stack_node **a);
 void			case_inrev_rotate_a(t_stack_node **a, t_stack_node **b);
 void			sizeuptothree(t_stack_node **a, t_stack_node **b);
+void			slt(t_stack_node **a, t_stack_node **b, int n, t_stack_node *p);
+void			firstcase(t_stack_node **a, t_stack_node **b);
+void			secondcase(t_stack_node **a, t_stack_node **b);
+void			thirdcase(t_stack_node **a, t_stack_node **b);
+void			forthcase(t_stack_node **a, t_stack_node **b);
+void			sortend(t_stack_node **a);
 
 #endif
