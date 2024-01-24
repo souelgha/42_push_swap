@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/24 12:04:42 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:08:32 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack_node
 {
 	int						value;
 	int						index;
-	int						index_final;
+	int						ind_tmp;
 	struct s_stack_node		*target_node;
 	struct s_stack_node		*next;
 	struct s_stack_node		*prev;
@@ -87,6 +87,7 @@ void			indice_final_node(t_stack_node **a, int *tab, int size);
 void			valeur_final_node(t_stack_node **a, int *tab, int size);
 void			ft_swap(int *a, int *b);
 void			sort_uptofive(t_stack_node **a, t_stack_node **b);
+void 			sort(t_stack_node **a, t_stack_node **b);
 int				maxi(t_stack_node *a);
 int				mini(t_stack_node *a);
 
@@ -101,5 +102,7 @@ void			secondcase(t_stack_node **a, t_stack_node **b);
 void			thirdcase(t_stack_node **a, t_stack_node **b);
 void			forthcase(t_stack_node **a, t_stack_node **b);
 void			sortend(t_stack_node **a);
+void			updateindex(t_stack_node **a);
+void			find_max(t_stack_node **a, int *maxtop, int *maxbottom);
 
 #endif

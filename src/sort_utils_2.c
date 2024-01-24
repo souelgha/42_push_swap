@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 09:28:44 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/24 10:26:39 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:09:02 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	thirdcase(t_stack_node **a, t_stack_node **b)
 void	forthcase(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*ptr;
-	int				diff;
+//	int				diff;
 
 	ptr = *b;
-	diff = ((*a)->value - ptr->value);
-	while (cmpn(*a, ptr) && diff != 1)
-		rotate_nodes_a(a);
-	if (cmpn(ptr,*a))
-		case_rotate_a(a, b);
+	// diff = ((*a)->value - ptr->value);
+	// while (cmpn(*a, ptr) && diff != 1)
+	// 	rotate_nodes_a(a);
+	// if (cmpn(ptr,*a))
+	// 	case_rotate_a(a, b);
 	push_to_a(a, b);
 }
 

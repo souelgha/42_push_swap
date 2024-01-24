@@ -16,12 +16,15 @@ int main(int argc, char **argv)
 	if(!manage_error(argv))
 	{
 		init_stack_a(&a, argv);
-	//	printf("Sa(%p)\n", &a);
-	//	affiche_list(a);
-	//	printf("\n");
+		printf("Sai(%p)\n", &a);
+		affiche_list(a);
+		printf("\n");
 		tab = sortab_final(argv, ft_lstsize(a));
 		valeur_final_node(&a, tab, ft_lstsize(a));
-	//	printf("size=%d\n", ft_lstsize(a));
+		printf("size=%d\n", ft_lstsize(a));
+		printf( "\033[0;32m" "Satab(%p)\n" "\x1B[0m", &a);
+		affiche_list(a);
+		printf("\n");
 		if (!check_sort(a))
 		{
 			if(ft_lstsize(a) == 2)
@@ -30,12 +33,15 @@ int main(int argc, char **argv)
 				sort_three(&a);
 			else if (ft_lstsize(a) == 4 || ft_lstsize(a) == 5)
 				sort_uptofive(&a, &b);
+			else
+				sort(&a, &b);
 		}
-	/*	printf("Sa(%p)\n", &a);
+		printf( "\033[0;31m" "Satab(%p)\n" "\x1B[0m", &a);
 		affiche_list(a);	
 		printf("Sb(%p)\n", &b);
 		affiche_list(b);;
-		printf("\n");*/		
+		printf("\n");	
+			
 	}
 	if (argc == 2)
 		free_split(argv);

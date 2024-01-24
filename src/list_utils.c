@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:10:14 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/24 10:36:25 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:23:04 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,20 @@ void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
 }
 
 /*********afficher la liste****************/
-// void	affiche_list(t_stack_node *lst)
-// {
-// 	t_stack_node	*ptr;	
-// 	if (!lst)
-// 		return ;
-// 	ptr = lst;
-// 	printf("lst_Add=(%p)\n", ptr);
-// 	while (ptr != NULL)
-// 	{
-// 		printf("nb=%d\tindex=%d\t\n", ptr->value, ptr->index);
-// 	//	printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
-// 		ptr = ptr->next;
-// 	}
-// }
+ void	affiche_list(t_stack_node *lst)
+{
+	t_stack_node	*ptr;	
+	if (!lst)
+		return ;
+	ptr = lst;
+	printf("lst_Add=(%p)\n", ptr);
+	while (ptr != NULL)
+	{
+		printf("nb=%d\tindex=%d\t\n", ptr->value, ptr->index);
+	//	printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
+		ptr = ptr->next;
+	}
+}
 /******affichage de debug */
 // void	affiche_status(t_stack_node **lst)
 // {

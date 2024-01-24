@@ -11,7 +11,7 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 #SOURCES
-SRC =  	check_sort.c\
+SRC =  	sort_algo.c\
 		error_utils.c\
 		free_utils.c\
 		ft_atoi.c\
@@ -44,16 +44,12 @@ $(OBJ_PATH):
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-
 clean:
 	rm -rf $(OBJ_PATH)
 	
-
 fclean: clean
 	rm -f $(NAME)
 
-
-re: fclean all
-	
+re: fclean all	
 
 .PHONY: all clean fclean re

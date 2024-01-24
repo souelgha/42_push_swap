@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:24:52 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/17 12:21:43 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:34:15 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ void	swap(t_stack_node **stack)
 	b = (*stack)->next->index;
 	(*stack)->index = b;
 	(*stack)->next->index = a;
-	a = (*stack)->index_final;
-	b = (*stack)->next->index_final;
-	(*stack)->index_final = b;
-	(*stack)->next->index_final = a;
 }
 
 void	swap_a(t_stack_node **stack)
