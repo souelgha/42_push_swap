@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/24 18:08:32 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:46:35 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void			forthcase(t_stack_node **a, t_stack_node **b);
 void			sortend(t_stack_node **a);
 void			updateindex(t_stack_node **a);
 void			find_max(t_stack_node **a, int *maxtop, int *maxbottom);
+int 			findpos(t_stack_node **a, t_stack_node **b);
 
 #endif
