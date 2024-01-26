@@ -3,8 +3,8 @@
 /**********tests avec le main des listes *******/
 int main(int argc, char **argv)
 {
-	t_stack_node *a;
-	t_stack_node *b;
+	t_stack *a;
+	t_stack *b;
 	int 	*tab;
 	
 	a = NULL;
@@ -21,10 +21,11 @@ int main(int argc, char **argv)
 		// printf("\n");
 		tab = sortab_final(argv, ft_lstsize(a));
 		valeur_final_node(&a, tab, ft_lstsize(a));
-		// printf("size=%d\n", ft_lstsize(a));
-		// printf( "\033[0;33m" "Satab(%p)\n" "\x1B[0m", &a);
-		// affiche_list(a);
-		// printf("\n");
+		printf("size=%d\n", ft_lstsize(a));
+		printf( "\033[0;33m" "Satab(%p)\n" "\x1B[0m", &a);
+		affiche_list(a);
+		printf("\n");
+	//	small = smallest(a);
 		if (!check_sort(a))
 		{
 			if(ft_lstsize(a) == 2)
@@ -36,11 +37,11 @@ int main(int argc, char **argv)
 			else
 				sort(&a, &b);
 		}
-		// printf( "\033[0;31m" "Safin(%p)\n" "\x1B[0m", &a);
-		// affiche_list(a);	
-		// printf("Sb(%p)\n", &b);
-		// affiche_list(b);;
-		// printf("\n");	
+		printf( "\033[0;31m" "Safin(%p)\n" "\x1B[0m", &a);
+		affiche_list(a);	
+		printf("Sb(%p)\n", &b);
+		affiche_list(b);;
+		printf("\n");	
 			
 	}
 	if (argc == 2)

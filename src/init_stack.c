@@ -6,20 +6,20 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:08:59 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/15 15:09:48 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:05 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /************ creer un new node pour chaque nombre **************/
-t_stack_node	*ft_lstnew_node(char *str, int index)
+t_stack	*ft_lstnew_node(char *str, int index)
 {
-	t_stack_node	*new_node;
+	t_stack	*new_node;
 	int				value;
 
 	value = ft_atoi(str);
-	new_node = malloc(sizeof(t_stack_node));
+	new_node = malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->value = value;
@@ -30,9 +30,9 @@ t_stack_node	*ft_lstnew_node(char *str, int index)
 }
 
 /*********** inserer le node en fin de liste ******************/
-void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node)
+void	ft_lstadd_back(t_stack **lst, t_stack *new_node)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = *lst;
 	if (*lst == NULL)
@@ -51,10 +51,10 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new_node)
 }
 
 /*********** initialiser la stack a ******************/
-void	init_stack_a(t_stack_node **a, char **argv)
+void	init_stack_a(t_stack **a, char **argv)
 {
 	int				i;
-	t_stack_node	*new_node;
+	t_stack	*new_node;
 
 	i = 1;
 	while (argv[i])

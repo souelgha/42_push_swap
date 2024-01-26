@@ -6,15 +6,15 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:04:37 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/15 14:06:40 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:05 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_to_b(t_stack_node **stack_a, t_stack_node **stack_b)
+void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack_node	*nodetopush;
+	t_stack	*nodetopush;
 
 	if (!(*stack_a))
 		return ;
@@ -34,9 +34,9 @@ void	push_to_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	write(1, "pb\n", 3);
 }
 
-void	push_to_a(t_stack_node **stack_a, t_stack_node **stack_b)
+void	push_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack_node	*nodetopush;
+	t_stack	*nodetopush;
 
 	if (!(*stack_b))
 		return ;

@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:12:59 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/15 15:13:01 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:05 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	free_split(char **argv)
 }
 
 /** ******free la list *************/
-void	ft_lstclear(t_stack_node **lst)
+void	ft_lstclear(t_stack **lst)
 {
-	t_stack_node	*tmp;
+	t_stack	*tmp;
 
 	if (!lst)
 		return ;

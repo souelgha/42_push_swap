@@ -6,15 +6,15 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:54:19 by sonia             #+#    #+#             */
-/*   Updated: 2024/01/24 10:27:06 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:05 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	case_rotate_a(t_stack_node **a, t_stack_node **b)
+void	case_rotate_a(t_stack **a, t_stack **b)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = *b;
 	if (ptr->value > maxi(*a))
@@ -29,15 +29,15 @@ void	case_rotate_a(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-void	case_rev_rotate_a(t_stack_node **a)
+void	case_rev_rotate_a(t_stack **a)
 {	
 	while (ft_lstlast(*a)->value < (*a)->value)
 		reverse_rotate_nodes_a(a);
 }
 
-void	case_inrev_rotate_a(t_stack_node **a, t_stack_node **b)
+void	case_inrev_rotate_a(t_stack **a, t_stack **b)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = *b;
 	if (ptr->value < mini(*a))
@@ -52,10 +52,10 @@ void	case_inrev_rotate_a(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-int	maxi(t_stack_node *a)
+int	maxi(t_stack *a)
 {
 	int				maxi;
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = a;
 	maxi = a->value;
@@ -68,10 +68,10 @@ int	maxi(t_stack_node *a)
 	return (maxi);
 }
 
-int	mini(t_stack_node *a)
+int	mini(t_stack *a)
 {
 	int				mini;
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = a;
 	mini = a->value;

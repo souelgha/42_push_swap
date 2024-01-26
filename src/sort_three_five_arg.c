@@ -6,13 +6,13 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:28:05 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/24 15:16:41 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/26 10:17:05 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	cmpn(t_stack_node *a, t_stack_node *b)
+int	cmpn(t_stack *a, t_stack *b)
 {
 	if ((a->value) > (b->value))
 		return (1);
@@ -20,11 +20,11 @@ int	cmpn(t_stack_node *a, t_stack_node *b)
 		return (0);
 }
 
-void	sort_three(t_stack_node **a)
+void	sort_three(t_stack **a)
 {
-	t_stack_node	*last;
-	t_stack_node	*mid;
-	t_stack_node	*one;
+	t_stack	*last;
+	t_stack	*mid;
+	t_stack	*one;
 
 	last = ft_lstlast(*a);
 	mid = (*a)->next;
@@ -47,16 +47,16 @@ void	sort_three(t_stack_node **a)
 		reverse_rotate_nodes_a(a);
 }
 
-void	sizeuptothree(t_stack_node **a, t_stack_node **b)
+void	sizeuptothree(t_stack **a, t_stack **b)
 {
 	while (ft_lstsize(*a) > 3)
 		push_to_b(a, b);
 }
 
-void	sort_uptofive(t_stack_node **a, t_stack_node **b)
+void	sort_uptofive(t_stack **a, t_stack **b)
 {
-	t_stack_node	*ptr;
-	t_stack_node	*tmp;
+	t_stack	*ptr;
+	t_stack	*tmp;
 	int				diff;
 
 	sizeuptothree(a, b);
@@ -72,9 +72,9 @@ void	sort_uptofive(t_stack_node **a, t_stack_node **b)
 	sortend(a);
 }
 
-void	slt(t_stack_node **a, t_stack_node **b, int diff, t_stack_node *ptr)
+void	slt(t_stack **a, t_stack **b, int diff, t_stack *ptr)
 {
-	t_stack_node	*last;	
+	t_stack	*last;	
 	int				middle;
 
 	middle = ft_lstsize(*a) / 2;

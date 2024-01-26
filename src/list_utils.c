@@ -6,14 +6,14 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:10:14 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/25 13:44:11 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:02:45 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /***** taille de la liste***********/
-int	ft_lstsize(t_stack_node *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	size_t	size;
 
@@ -30,9 +30,9 @@ int	ft_lstsize(t_stack_node *lst)
 
 /************ creer un new node avec la valeur **************/
 /***********trouver le dernier *****/
-t_stack_node	*ft_lstlast(t_stack_node *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = lst;
 	if (lst == NULL)
@@ -46,7 +46,7 @@ t_stack_node	*ft_lstlast(t_stack_node *lst)
 }
 
 /************ajouter un node au debut de la chaine *****/
-void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
+void	ft_add_front_node(t_stack **lst, t_stack *new_node)
 {
 	if (*lst == NULL)
 	{
@@ -64,42 +64,18 @@ void	ft_add_front_node(t_stack_node **lst, t_stack_node *new_node)
 }
 
 /*********afficher la liste****************/
- void	affiche_list(t_stack_node *lst)
+ void	affiche_list(t_stack *lst)
 {
-	t_stack_node	*ptr;	
+	t_stack	*ptr;	
 	if (!lst)
 		return ;
 	ptr = lst;
 	printf("lst_Add=(%p)\n", ptr);
 	while (ptr != NULL)
 	{
-		printf("nb=%d\tindex=%d\t\n", ptr->value, ptr->index);
+		printf( "\033[0;33m" "nb=%d\tindex=%d\ttarget=(%p)\n" "\x1B[0m", ptr->value, ptr->index, ptr->target);
+		printf("\033[0;33m" "Add=(%p)\tcost=%d\t\n" "\x1B[0m", ptr, ptr->cost);
 	//	printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
 		ptr = ptr->next;
 	}
 }
-/******affichage de debug */
-// void	affiche_status(t_stack_node **lst)
-// {
-// 	t_stack_node	*ptr;
-
-// 	if (!lst)
-// 		return;
-// 	ptr = *lst;
-// 	printf("lst_Add=(%p)\n", ptr);
-// 	while (ptr->next != NULL)
-// 	{
-// 		printf("value_node=%d\tindex=%d\tindex_final=%d\t", ptr->value, ptr->index, ptr->index_final);
-// 		if(ptr->prev != NULL)
-// 			printf("prev_value=%d\t", ptr->prev->value);
-// 		else
-// 			printf("prev_value=NULL\t");
-// 		printf("next_value=%d\t\n", ptr->next->value);	
-// 		ptr = ptr->next;
-// 	}
-// 	if (ptr == ft_lstlast(*lst))
-// 	{
-// 		printf("value_node=%d\tindex=%d\tindex_final=%d\t", ptr->value, ptr->index, ptr->index_final);
-// 		printf("prev_value=%d\tnext_value=NULL\t", ptr->prev->value);
-// 	}
-//}

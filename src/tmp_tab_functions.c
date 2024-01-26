@@ -6,16 +6,16 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 09:58:03 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/24 14:31:06 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:05 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /****verifie si la pile est deja triee ********/
-int	check_sort(t_stack_node *stack_a)
+int	check_sort(t_stack *stack_a)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	if (!stack_a)
 		return (-1);
@@ -83,9 +83,9 @@ int	*sortab_final(char **argv, int size)
 }
 
 /****modif des valeurs du tableau dans le node pour utiliser pour le tri****/
-void	valeur_final_node(t_stack_node **a, int *tab, int size)
+void	valeur_final_node(t_stack **a, int *tab, int size)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 	int				i;
 
 	ptr = *a;

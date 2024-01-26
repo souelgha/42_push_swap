@@ -26,6 +26,7 @@ SRC =  	sort_algo.c\
 		sort_utils.c\
 		sort_utils_2.c\
 		tmp_tab_functions.c\
+		quick_sort_utils.c\
 		main.c
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
