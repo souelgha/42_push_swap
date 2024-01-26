@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:10:14 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/26 12:02:45 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/26 14:23:30 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	ft_add_front_node(t_stack **lst, t_stack *new_node)
 	printf("lst_Add=(%p)\n", ptr);
 	while (ptr != NULL)
 	{
-		printf( "\033[0;33m" "nb=%d\tindex=%d\ttarget=(%p)\n" "\x1B[0m", ptr->value, ptr->index, ptr->target);
-		printf("\033[0;33m" "Add=(%p)\tcost=%d\t\n" "\x1B[0m", ptr, ptr->cost);
+		printf( "\033[0;33m" "nb=%d\tindex=%d\t\n" "\x1B[0m", ptr->value, ptr->index);
+		printf("\033[0;33m" "Add=(%p)\ttarget=(%p)\tcost=%d\t\n" "\x1B[0m", ptr, ptr->target, ptr->cost);
 	//	printf("Add=(%p)\tnext=(%p)\tprev=(%p)\n", ptr, ptr->next, ptr->prev);
 		ptr = ptr->next;
 	}

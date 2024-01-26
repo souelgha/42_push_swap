@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:39:58 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/26 11:54:27 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:47:11 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,7 @@ int 			findpos(t_stack **a, t_stack **b);
 void 			target(t_stack *a, t_stack *b);
 t_stack 		*smallest(t_stack *a);
 void 			cost(t_stack *a, t_stack *b);
+t_stack			*cheapest(t_stack *b);
+void			rotate_both_sort(t_stack **a, t_stack **b);
 
 #endif
