@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:08:59 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/25 15:45:05 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:54:23 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_stack	*ft_lstnew_node(char *str, int index)
 {
 	t_stack	*new_node;
-	int				value;
+	int		value;
 
 	value = ft_atoi(str);
 	new_node = malloc(sizeof(t_stack));
@@ -53,8 +53,8 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new_node)
 /*********** initialiser la stack a ******************/
 void	init_stack_a(t_stack **a, char **argv)
 {
-	int				i;
 	t_stack	*new_node;
+	int		i;	
 
 	i = 1;
 	while (argv[i])

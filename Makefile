@@ -22,11 +22,9 @@ SRC =  	sort_algo.c\
 		reverse_rotate_nodes.c\
 		rotate_nodes.c\
 		swap_nodes.c\
-		sort_three_five_arg.c\
-		sort_utils.c\
-		sort_utils_2.c\
-		tmp_tab_functions.c\
+		sort_three.c\
 		quick_sort_utils.c\
+		quick_sort_utils_2.c\
 		main.c
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
