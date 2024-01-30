@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:03:10 by sonouelg          #+#    #+#             */
-/*   Updated: 2024/01/10 15:11:15 by sonouelg         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:31:17 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,20 @@ int	error_syntax(char *str)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
 	while (str[i])
 	{
-		if ((str[i] < '0' || str[i] > '9') && str[i] != '+' && str[i] != '-')
+		if (str[i] < '0' || str[i] > '9')
 		{
 			return (1);
 			break ;
 		}
 		i++;
 	}
+	if (i == 1 && (str[0] == '+' || str[0] == '-'))
+		return (1);
 	return (0);
 }
 
