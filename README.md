@@ -23,4 +23,8 @@
   - and move it to the top of stack A.
   - recalculate target element and cost value after each push a.
  - At the end rotate A to put the smallest element on top.
+
+Visualizer : [https://github.com/o-reo/push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
+
+![visualizer gif](visualizer.gif)
  
