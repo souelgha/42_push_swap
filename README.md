@@ -19,10 +19,10 @@
 - As long as B is not empty, we look for the element of B that will require the least number of instructions to reach A (in the right place). for that :
   - calculate target element from stack A for each B element.
   - calculate the cost value (number of instructions we need to put element at the right place in A).
-  - choose the cheapest one
-  - and move it to the top of stack A.
-  - recalculate target element and cost value after each push a.
- - At the end rotate A to put the smallest element on top.
+  - choose the cheapest one.
+  - finally move it to the top of stack A.
+  - recalculate target element and cost value after each push to stak A.
+ - At the end, when stack B is empty,  rotate A to put the smallest element on top.
 
 Visualizer : [https://github.com/o-reo/push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
 
