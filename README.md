@@ -13,7 +13,8 @@
   - rra (reverse rotate a) : shift down all elements of stack A by 1. the last become first one.
   - rrb (reverse rotate b) : shift down all elements of stack B by 1. the last become first one.
   - rrr : rra et rrb at the same time.
-#Algo used
+    
+# Algo used
 - We push (pb) in B until there are only three elements left in A. we sorted A by descending order.
 - As long as B is not empty, we look for the element of B that will require the least number of instructions to reach A (in the right place). for that :
   - calculate target element from stack A for each B element.
