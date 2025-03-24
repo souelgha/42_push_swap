@@ -24,6 +24,28 @@
   - recalculate target element and cost value after each push to stak A.
  - At the end, when stack B is empty,  rotate A to put the smallest element on top.
 
+## Build and start
+run
+```
+make
+```
+then you can start stack like following
+
+ARG="put number inside double cote"
+- to show instructions used
+```
+ARG="1 5 2 4 3"; ./push_swap $ARG 
+```
+- to show the numbers of instructions used
+```
+ARG="1 5 2 4 3"; ./push_swap $ARG | wc -l
+```
+- to show if the stack is sorted
+```
+ARG="1 5 2 4 3"; ./push_swap $ARG  | ./checker_linux $ARG
+```
+
+
 Visualizer : [https://github.com/o-reo/push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
 
 ![visualizer gif](visualizer.gif)
